@@ -1,184 +1,77 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useCart } from '../../contexts/CartContext';
+import './ShoppingCart.css';
 
 const ShoppingCart = () => {
-    const [cartItems, setCartItems] = useState([]);
-    const [subtotal, setSubtotal] = useState(0);
-    const [cartId, setCartId] = useState(null);
-    const userId = 1; // Hardcoded user ID for this example
+  const { cartItems, removeFromCart } = useCart();
 
-    useEffect(() => {
-        // Fetch cart items for the user
-        const fetchCartItems = async () => {
-            try {
-                const response = await axios.get(`http://localhost:8081/api/cart/user/${userId}/items`);
-                const items = response.data;
+  // Define images for each product, matching them with the names in the cart
+  const productImages = {
+    'Garlic bread': 'https://pauladeenmagazine.com/wp-content/uploads/2018/06/fd2.jpg',
+    'Croissant': 'https://static1.squarespace.com/static/5d4db21e02c9a3000161e7e6/5e12086562ad5d43f3bd8ea7/648a14c40de86f50ee2f6e73/1686777935999/4F7A5162.jpg?format=1500w',
+    'Sandwitch': 'https://montougo.ca/wp-content/uploads/2024/10/bahnmi-daikon-1500x1500.jpg',
+    'Burger': 'https://img.freepik.com/premium-photo/hamburger-table-restaurant_807701-2420.jpg',
+    'Browinie': 'https://www.cocoandbean.com.au/cdn/shop/files/new_website_photos_6.png?v=1725325518&width=1500',
+    'Muffine': 'https://i5.walmartimages.com/asr/cf968fd9-85be-49f0-ae11-8103d942429d.a9634b8c8025cde5ef4a16e52f00034e.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF',
+    'Red velvate cake': 'https://bakeology.ae/wp-content/uploads/2023/11/RED-VELVET-CAKE.jpg',
+    'Cheesecake': 'https://i0.wp.com/ovenfresh.in/wp-content/uploads/2023/02/Baked-Cherry-Cheese-Cake750gms1.jpg?fit=1500%2C1500&ssl=1',
+    'Cappuccino': 'https://m.media-amazon.com/images/I/61L3CzrO76L.jpg',
+    'Hot choclate': 'https://www.rachelcooks.com/wp-content/uploads/2024/10/oat-milk-hot-chocolate-1500-11-square.jpg',
+    'Coffee': 'https://m.media-amazon.com/images/I/71BSVR7LQZL.jpg',
+    'Smothies': 'https://www.throughthefibrofog.com/wp-content/uploads/2022/02/apple-and-pear-smoothie-3.jpg'
+  };
 
-                // Set cart items and subtotal
-                setCartItems(items);
+  // Calculate total items and total price
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-                // Calculate subtotal
-                const total = items.reduce((acc, item) => acc + item.totalPrice, 0);
-                setSubtotal(total);
+  const handleCheckout = () => {
+    // Redirect or perform checkout logic here
+    window.location.href = '#'; // Adjust the URL based on your app's routing
+  };
 
-                // Extract and set cartId from the first item (assuming all items share the same cartId)
-                if (items.length > 0) {
-                    setCartId(items[0].cartId);
-                }
-            } catch (error) {
-                console.error('Error fetching cart items:', error);
-            }
-        };
+  return (
+    <div className="cart-container">
+      <h1 className="cart-header">Your Shopping Cart</h1>
 
-        fetchCartItems();
-    }, [userId]);
+      {cartItems.length === 0 ? (
+        <p className="empty-cart-message">Your cart is empty</p>
+      ) : (
+        <>
+          <ul className="cart-item-list">
+            {cartItems.map((item, index) => (
+              <li key={index} className="cart-item">
+                <img 
+                  src={productImages[item.name]} 
+                  alt={item.name} 
+                  className="cart-item-image" 
+                />
+                <div className="cart-item-details">
+                  <div className="cart-item-name">{item.name}</div>
+                  <div className="cart-item-price">Rs. {item.price}</div>
+                  <div className="cart-item-quantity">Quantity: {item.quantity}</div>
+                </div>
+                <button 
+                  onClick={() => removeFromCart(item)} 
+                  className="remove-button"
+                >
+                  Remove 
+                </button>
+              </li>
+            ))}
+          </ul>
 
-    const handleQuantityChange = (itemId, newQuantity) => {
-        // Update quantity locally for now
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
-                item.cartItemId === itemId
-                    ? {
-                        ...item,
-                        quantity: newQuantity,
-                        totalPrice: newQuantity * item.unitPrice,
-                    }
-                    : item
-            )
-        );
-
-        // Recalculate subtotal
-        const updatedSubtotal = cartItems.reduce(
-            (acc, item) => acc + (item.cartItemId === itemId ? newQuantity * item.unitPrice : item.totalPrice),
-            0
-        );
-        setSubtotal(updatedSubtotal);
-
-        // TODO: Send an API request to update the cart item quantity on the backend
-    };
-
-    const handleRemoveItem = (itemId) => {
-        // Remove item locally
-        setCartItems((prevItems) => prevItems.filter((item) => item.cartItemId !== itemId));
-
-        // Recalculate subtotal
-        const updatedSubtotal = cartItems
-            .filter((item) => item.cartItemId !== itemId)
-            .reduce((acc, item) => acc + item.totalPrice, 0);
-        setSubtotal(updatedSubtotal);
-
-        // TODO: Send an API request to remove the cart item from the backend
-    };
-
-    const handlePaymentSuccess = (details) => {
-        if (!cartId) {
-            console.error('Cart ID is not available for payment processing.');
-            return;
-        }
-
-        // Create payment request payload
-        const paymentPayload = {
-            cartId: cartId,
-            payerId: '1', // Hardcoded for now
-            paymentStatus: 'approved', // Hardcoded for this example
-            paymentDate: new Date().toISOString(), // Current date and time
-            paymentMethod: 'paypal',
-            paymentAmount: subtotal, // Use the calculated subtotal
-            salesRequest: null,
-        };
-
-        // Send payment request to the backend
-        axios
-            .post('http://localhost:8081/api/payment/process-cart-payment', paymentPayload)
-            .then((response) => {
-                console.log('Payment processed successfully:', response.data);
-                alert('Payment successful!');
-            })
-            .catch((error) => {
-                console.error('Error processing payment:', error);
-            });
-    };
-
-    return (
-        <section className="shopping-cart">
-            <div className="container">
-
-                {cartItems.length > 0 ? (
-                    cartItems.map((item) => (
-                        <div className="cart-item" key={item.cartItemId}>
-                            <div className="item-image">
-                                <img
-                                    src={item.productImage || 'https://via.placeholder.com/150'}
-                                    alt={item.productName}
-                                />
-                            </div>
-                            <div className="item-details">
-                                <div className="item-header">
-                                    <h5 className="item-title">{item.productName}</h5>
-                                    <button
-                                        className="remove-btn"
-                                        onClick={() => handleRemoveItem(item.cartItemId)}
-                                    >
-                                        Remove
-                                    </button>
-                                </div>
-                                <p className="item-description">Size: {item.productSize}</p>
-                                <div className="item-footer">
-                                    <div className="quantity-control">
-                                        <button
-                                            className="quantity-btn"
-                                            onClick={() =>
-                                                handleQuantityChange(
-                                                    item.cartItemId,
-                                                    Math.max(1, item.quantity - 1)
-                                                )
-                                            }
-                                        >
-                                            -
-                                        </button>
-                                        <input
-                                            type="text"
-                                            value={item.quantity}
-                                            className="quantity-input"
-                                            readOnly
-                                        />
-                                        <button
-                                            className="quantity-btn"
-                                            onClick={() =>
-                                                handleQuantityChange(
-                                                    item.cartItemId,
-                                                    item.quantity + 1
-                                                )
-                                            }
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                    <h6 className="item-price">
-                                        Rs. {item.totalPrice.toFixed(2)}
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                ) : (
-                    <p>Your cart is empty.</p>
-                )}
-
-                {/* Subtotal Section */}
-                {cartItems.length > 0 && (
-                    <div className="subtotal">
-                        <h5 className="subtotal-title">Subtotal</h5>
-                        <div className="subtotal-details">
-                            <h6 className="subtotal-price">Rs. {subtotal.toFixed(2)}</h6>
-                        </div>
-                    </div>
-                )}
-
-
-            </div>
-        </section>
-    );
+          {/* Cart Summary Section */}
+          <div className="cart-summary">
+            <h3>Cart Summary</h3>
+            <p>Total Items: <span id="total-items">{totalItems}</span></p>
+            <p>Total Price: <span id="total-price">Rs. {totalPrice.toFixed(2)}</span></p>
+            <button onClick={handleCheckout} className="checkout-button">Checkout</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default ShoppingCart;

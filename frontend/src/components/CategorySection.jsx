@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './CategorySection.css';
 
 const CategorySection = () => {
     const navigate = useNavigate();
@@ -26,8 +27,7 @@ const CategorySection = () => {
     ];
 
     const handleCategoryClick = (id) => {
-        navigate(`/category/${id}`);
- // Redirect to /category/:id
+        navigate(`/category/${id}`); // Redirect to /category/:id
     };
 
     return (
@@ -41,7 +41,6 @@ const CategorySection = () => {
                                 className="category-image"
                                 src={category.imageUrl}
                                 alt={`Category ${category.title}`}
-
                             />
                             <div className="category-info">
                                 <div className="category-text-content">

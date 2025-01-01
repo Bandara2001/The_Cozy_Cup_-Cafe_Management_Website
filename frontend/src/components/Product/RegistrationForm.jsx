@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './RegistrationForm.css';
 
 
 const RegistrationForm = () => {
@@ -37,9 +37,8 @@ const RegistrationForm = () => {
 
   return (
     
-    
     <section className="register-section">
-      <div className="register-container">
+      <div className="register -container" >
         <h2>REGISTER</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -97,7 +96,7 @@ const RegistrationForm = () => {
           {isSubmitted && <p className="success-message">Registration successful!</p>}
 
           <p>
-            Already have an account? <a href="#">Login here</a>
+            Already have an account? <a href="http://localhost:3000">Login here</a>
           </p>
         </form>
       </div>

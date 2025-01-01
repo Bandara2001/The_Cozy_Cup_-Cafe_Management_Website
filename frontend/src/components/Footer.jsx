@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
+import './Footer.css';
 
 const Footer = () => {
+    const navigate = useNavigate();  // Initialize navigate hook
+
+    const handleNavigation = (path) => {
+        navigate(path);  // Programmatically navigate to the path
+    };
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -13,13 +21,28 @@ const Footer = () => {
                 </div>
 
                 <ul className="footer-links">
-                    <li><a href="http://localhost:3000/shop" className="footer-link">Products</a></li>
-                    <li><a href="#" className="footer-link">Resources</a></li>
-                    <li><a href="http://localhost:3000/about" className="footer-link">Blogs</a></li>
-                    <li><a href="http://localhost:3000/contact" className="footer-link">Support</a></li>
+                    <li>
+                        <button onClick={() => handleNavigation('/shop')} className="footer-link">
+                            Products
+                        </button>
+                    </li>
+                    <li>
+                        <button onClick={() => handleNavigation('/resources')} className="footer-link">
+                            Resources
+                        </button>
+                    </li>
+                    <li>
+                        <button onClick={() => handleNavigation('/about')} className="footer-link">
+                            Blogs
+                        </button>
+                    </li>
+                    <li>
+                        <button onClick={() => handleNavigation('/contact')} className="footer-link">
+                            Support
+                        </button>
+                    </li>
                 </ul>
 
-                
                 <span className="footer-copyright">
                     ©<a href="#" className="footer-link">COZY_CUP</a> 2025, All rights reserved.
                 </span>

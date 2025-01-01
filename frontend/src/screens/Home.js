@@ -13,11 +13,13 @@ function Home() {
         
 
         <div>
+            
            <HeroSection/>
             <LatestArrivals/>
             <CommunitySection/>
             <CategorySection/>
             <ConnectSection/>
+        
         </div>
     )
 }

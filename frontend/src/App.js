@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/reset.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { CartProvider } from './contexts/CartContext'; // Import CartProvider
 import Layout from './screens/Layout';
 import Home from './screens/Home';
 import About from "./screens/About";
@@ -15,13 +16,12 @@ import FoodCategory1 from "./components/FoodCategory1";
 import DessertsCategory2 from "./components/DessertsCategory2";
 import BeveragesCategory3 from "./components/BeveragesCategory3";
 import CheckOut from "./components/Product/CheckOut";
-
  
  
 
 function App() {
   return (
-    
+    <CartProvider> 
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout/>}>
@@ -37,13 +37,10 @@ function App() {
              <Route path="/category/2" element={<DessertsCategory2/>}/>
              <Route path="/category/3" element={<BeveragesCategory3/>}/>
              <Route path="/checkout" element={<CheckOut/>}/>
-             
-
-             
-
-        </Route>
+       </Route>
        </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

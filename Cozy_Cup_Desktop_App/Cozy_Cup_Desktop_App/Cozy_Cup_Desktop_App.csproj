@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Free Cozy Coffee Shop Image _ Download at StockCake.jpg" />
+    <None Remove="Registration_bg.jpg" />
+    <None Remove="The Ultimate Guide to Designing the Perfect Cozy Café.jpg" />
+    <None Remove="vecteezy_ai-generated-an-aesthetic-studio-coffee-shop-interior_35796334.jpg" />
+    <None Remove="vecteezy_ai-generated-wooden-table-with-coffee-cup-vase-and-flowers_38995387.jpg" />
+    <None Remove="vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Free Cozy Coffee Shop Image _ Download at StockCake.jpg" />
+    <Resource Include="Registration_bg.jpg" />
+    <Resource Include="The Ultimate Guide to Designing the Perfect Cozy Café.jpg" />
+    <Resource Include="vecteezy_ai-generated-an-aesthetic-studio-coffee-shop-interior_35796334.jpg" />
+    <Resource Include="vecteezy_ai-generated-wooden-table-with-coffee-cup-vase-and-flowers_38995387.jpg" />
+    <Resource Include="vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" />
+  </ItemGroup>
+
+</Project>

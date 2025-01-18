@@ -1,0 +1,75 @@
+﻿<Window x:Class="Cozy_Cup_Desktop_App.Employee_Management"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cozy_Cup_Desktop_App"
+        mc:Ignorable="d"
+        Title="Employee Management" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/Registration_bg.jpg" Stretch="Fill" Opacity="0.75" />
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="621*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left side navigation -->
+        <DockPanel HorizontalAlignment="Center" Height="434" LastChildFill="False" VerticalAlignment="Center" Width="178" Background="#FF902D0C" Cursor="Hand">
+            <Image x:Name="Logo" Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" Width="100" Height="96" Margin="40,0,0,300">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png"/>
+                </Image.OpacityMask>
+            </Image>
+            <Label Content="Admin's Portal" Width="145" Height="34" Margin="-120,0,0,150" FontFamily="Arial Rounded MT Bold" FontSize="18" Foreground="White"/>
+        </DockPanel>
+
+        <!-- Right side: Employee management -->
+        <Grid Grid.Column="1">
+            <!-- DataGrid at the top -->
+            <DataGrid Name="EmployeesDataGrid" Height="200" Margin="20,0,20,200" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <!-- Employee ID Column -->
+                    <DataGridTextColumn Header="Employee ID" Binding="{Binding Id}" Width="*" />
+
+                    <!-- Employee Name Column -->
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+
+                    <!-- Category Column -->
+                    <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Employee Fields and Buttons at the bottom-right -->
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Vertical" Margin="0,0,20,30">
+                <TextBlock Text="Employee ID" Margin="-10,0,10,-60" Foreground="White" Cursor="Arrow" FontSize="13" FontFamily="Arial Rounded MT Bold"/>
+                <TextBox Name="EmployeeIdTextBox" Width="200" Margin="5"/>
+
+                <TextBlock Text="Employee Name" Margin="-40,5,5,-15" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="13"/>
+                <TextBox Name="EmployeeNameTextBox" Width="200" Margin="5"/>
+
+                <TextBlock Text="Category" Margin="5,5,5,-25" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="13"/>
+                <ComboBox Name="EmployeeCategoryComboBox" Width="200" Margin="5">
+                    <ComboBoxItem Content="Cashier"/>
+                    <ComboBoxItem Content="Waiter"/>
+                    <ComboBoxItem Content="Chef"/>
+                </ComboBox>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="ADD" Height="27" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="14" Background="#FF902D0C" Foreground="White" Click="AddButton_Click"/>
+                    <Button Content="UPDATE" Height="27" Width="80" Margin="5,0,5,10" FontFamily="Arial Rounded MT Bold" FontSize="14" Background="#FF902D0C" Foreground="White" Click="UpdateButton_Click"/>
+                    <Button Content="DELETE" Height="27" Width="80" Margin="5,0,5,10" FontSize="14" FontFamily="Arial Rounded MT Bold" Background="#FF902D0C" Foreground="White" Click="DeleteButton_Click"/>
+                    <Button Content="CLEAR" Height="27" Width="80" Margin="5,0,5,10" FontSize="14" FontFamily="Arial Rounded MT Bold" Background="#FF902D0C" Foreground="White" Click="ClearButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!-- Navigation Buttons -->
+        <Button Content="DashBoard" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="159" Margin="0,182,0,0" Background="#FF902D0C" BorderBrush="White" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="15" Cursor="Hand" Click="Dashboard_Click"/>
+        <Button Content="Add Cashier" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="159" Margin="0,222,0,0" Background="#FF902D0C" BorderBrush="White" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="15" Cursor="Hand" />
+        <Button Content="Add Product" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="159" Margin="0,262,0,0" Background="#FF902D0C" BorderBrush="White" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="15" Cursor="Hand" Click="AddProducts_Click"/>
+        <Button Content="Customers" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="159" Margin="0,302,0,0" Background="#FF902D0C" BorderBrush="White" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="15" Cursor="Hand" Click="Customers_Click"/>
+        <Button Content="LogOut" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="160" Margin="0,374,0,0" Background="#FF902D0C" BorderBrush="White" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="15" Cursor="Hand" Click="Logout_Click"/>
+    </Grid>
+</Window>

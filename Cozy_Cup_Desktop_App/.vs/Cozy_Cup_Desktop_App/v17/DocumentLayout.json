@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -39,6 +39,10 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-01-15T11:46:56.135Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -62,12 +66,7 @@
               "RelativeToolTip": "Cozy_Cup_Desktop_App\\DashBoard.xaml.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:22:54.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-01-18T08:22:54.867Z"
             },
             {
               "$type": "Document",
@@ -78,8 +77,7 @@
               "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Customer_Management.xaml",
               "RelativeToolTip": "Cozy_Cup_Desktop_App\\Customer_Management.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-17T12:39:50.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T12:39:50.48Z"
             }
           ]
         }

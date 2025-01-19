@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DashBoard" Height="450" Width="800">
+        Title="DashBoard" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <!-- Grid Column Definitions -->
         <Grid.ColumnDefinitions>
@@ -15,20 +15,20 @@
         <!-- Main Content Section -->
         <StackPanel Background="#FFF7F5F2" Grid.ColumnSpan="2">
             <!-- Statistics Summary -->
-            <DockPanel Height="130" LastChildFill="False" Width="606" Margin="180,10,0,0" Background="#FFEDDAD4">
-                <DockPanel LastChildFill="False" Width="138" Margin="10,10,10,10" Background="#FF902D0C">
+            <DockPanel Height="149" LastChildFill="False" Width="1197" Margin="400,10,0,0" Background="#FFEDDAD4">
+                <DockPanel LastChildFill="False" Width="138" Margin="48,10,10,10" Background="#FF902D0C" Height="110">
                     <TextBox TextWrapping="Wrap" Text="Total of Cashiers" Width="138" Height="30" 
                              HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF902D0C" 
                              BorderBrush="#FF902D0C" Foreground="White" FontSize="15" 
                              FontFamily="Arial Rounded MT Bold"/>
                 </DockPanel>
-                <DockPanel LastChildFill="False" Background="#FF902D0C" Width="138" Margin="80,0,0,0" Height="110">
+                <DockPanel LastChildFill="False" Background="#FF902D0C" Width="138" Margin="250,0,0,0" Height="110">
                     <TextBox TextWrapping="Wrap" Text="Total of Customers" Background="#FF902D0C" 
                              BorderBrush="#FF902D0C" Foreground="White" FontSize="15" 
                              FontFamily="Arial Rounded MT Bold" Width="140" Height="40" 
                              HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 </DockPanel>
-                <DockPanel LastChildFill="False" Background="#FF902D0C" Width="138" Margin="80,0,0,0" Height="110">
+                <DockPanel LastChildFill="False" Background="#FF902D0C" Width="138" Margin="298,0,0,0" Height="110">
                     <TextBox TextWrapping="Wrap" Text="Today's Income" Background="#FF902D0C" 
                              BorderBrush="#FF902D0C" Foreground="White" FontSize="15" 
                              FontFamily="Arial Rounded MT Bold" Width="100" Height="35" VerticalAlignment="Top"/>
@@ -36,39 +36,39 @@
             </DockPanel>
 
             <!-- Image Section -->
-            <DockPanel Height="264" LastChildFill="False" Width="596" Margin="180,20,0,0" Background="#FFEDDAD4">
-                <Image Width="576" Height="236" Margin="10,0,0,0" 
+            <DockPanel Height="594" LastChildFill="False" Width="1097" Margin="400,20,0,0" Background="#FFEDDAD4">
+                <Image Margin="10,0,0,0" 
                        Source="/vecteezy_ai-generated-an-aesthetic-studio-coffee-shop-interior_35796334.jpg" 
-                       Stretch="Fill"/>
+                       Stretch="Fill" Width="1061" Height="544"/>
             </DockPanel>
         </StackPanel>
 
         <!-- Sidebar Section -->
-        <DockPanel HorizontalAlignment="Center" Height="434" LastChildFill="False" 
-                   VerticalAlignment="Center" Width="178" Background="#FF902D0C" Cursor="Hand">
+        <DockPanel HorizontalAlignment="Center" Height="862" LastChildFill="False" 
+                   VerticalAlignment="Center" Width="379" Background="#FF902D0C" Cursor="Hand">
             <Image x:Name="Logo" Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" 
-                   Width="100" Height="96" Margin="40,0,0,300">
+                   Width="100" Height="96" Margin="134,0,0,701">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Label Content="Admin's Portal" Width="145" Height="34" Margin="-120,0,0,150" 
+            <Label Content="Admin's Portal" Width="145" Height="34" Margin="-110,0,0,600" 
                    FontFamily="Arial Rounded MT Bold" FontSize="18" Foreground="White"/>
         </DockPanel>
 
         <!-- Navigation Buttons -->
         <Button Content="Dashboard" HorizontalAlignment="Center" Height="38" VerticalAlignment="Center" 
                 Width="158" Background="#FF902D0C" FontSize="15" FontFamily="Arial Rounded MT Bold" 
-                BorderBrush="White" Foreground="White" Click="Dashboard_Click"/>
+                BorderBrush="White" Foreground="White" Click="Dashboard_Click" Margin="0,0,0,80"/>
         <Button Content="Add Cashier" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" 
                 Width="158" Background="#FF902D0C" FontSize="15" FontFamily="Arial Rounded MT Bold" 
-                BorderBrush="White" Foreground="White" Margin="0,241,0,0" Click="AddCashier_Click"/>
+                BorderBrush="White" Foreground="White" Margin="0,200,0,0" Click="AddCashier_Click"/>
         <Button Content="Add Products" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" 
                 Width="158" Background="#FF902D0C" FontSize="15" FontFamily="Arial Rounded MT Bold" 
-                BorderBrush="White" Foreground="White" Margin="0,284,0,0" Click="AddProducts_Click"/>
+                BorderBrush="White" Foreground="White" Margin="0,250,0,0" Click="AddProducts_Click"/>
         <Button Content="Customers" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" 
                 Width="158" Background="#FF902D0C" FontSize="15" FontFamily="Arial Rounded MT Bold" 
-                BorderBrush="White" Foreground="White" Margin="0,327,0,0" Click="Customers_Click"/>
+                BorderBrush="White" Foreground="White" Margin="0,300,0,0" Click="Customers_Click"/>
         <Button Content="LogOut" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" 
                 Width="158" Background="#FF902D0C" FontSize="15" FontFamily="Arial Rounded MT Bold" 
                 BorderBrush="White" Foreground="White" Margin="0,386,0,0" Click="Logout_Click"/>

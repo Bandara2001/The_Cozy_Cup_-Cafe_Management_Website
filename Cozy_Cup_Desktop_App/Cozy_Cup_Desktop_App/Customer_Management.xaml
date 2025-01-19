@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cozy_Cup_Desktop_App"
         mc:Ignorable="d"
-        Title="Customer Management" Height="450" Width="800">
+        Title="Customer Management" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="/Registration_bg.jpg" Stretch="Fill" Opacity="0.75" />
     </Window.Background>
@@ -17,13 +17,13 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left side navigation -->
-        <DockPanel HorizontalAlignment="Center" Height="434" LastChildFill="False" VerticalAlignment="Center" Width="178" Background="#FF902D0C" Cursor="Hand">
-            <Image x:Name="Logo" Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" Width="100" Height="96" Margin="40,0,0,300">
+        <DockPanel HorizontalAlignment="Center" Height="877" LastChildFill="False" VerticalAlignment="Center" Width="210" Background="#FF902D0C" Cursor="Hand">
+            <Image x:Name="Logo" Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" Width="100" Height="96" Margin="55,0,0,650">
                 <Image.OpacityMask>
                     <ImageBrush ImageSource="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png"/>
                 </Image.OpacityMask>
             </Image>
-            <Label Content="Admin's Portal" Width="145" Height="34" Margin="-120,0,0,150" FontFamily="Arial Rounded MT Bold" FontSize="18" Foreground="White"/>
+            <Label Content="Admin's Portal" Width="145" Height="34" Margin="-120,0,0,500" FontFamily="Arial Rounded MT Bold" FontSize="18" Foreground="White"/>
         </DockPanel>
 
         <!-- Right side: Customer management -->

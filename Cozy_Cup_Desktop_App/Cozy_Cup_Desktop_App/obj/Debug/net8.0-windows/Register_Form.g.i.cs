@@ -61,7 +61,7 @@ namespace Cozy_Cup_Desktop_App {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Cozy_Cup_Desktop_App;V1.0.0.0;component/register_form.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Cozy_Cup_Desktop_App;component/register_form.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Register_Form.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

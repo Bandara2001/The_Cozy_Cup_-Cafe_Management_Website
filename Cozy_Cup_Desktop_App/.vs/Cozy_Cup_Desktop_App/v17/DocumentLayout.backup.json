@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\products_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\products_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\employee_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\employee_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\customer_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\customer_management.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|solutionrelative:cozy_cup_desktop_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8763364E-DAEE-46BC-8073-BC63912CFDC2}|Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App.csproj|d:\\gui pro\\the_cozy_cup_-cafe_management_website\\cozy_cup_desktop_app\\cozy_cup_desktop_app\\register_form.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -30,7 +38,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Register_Form.xaml",
               "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Register_Form.xaml",
               "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\Register_Form.xaml",
@@ -38,7 +46,8 @@
               "RelativeToolTip": "Cozy_Cup_Desktop_App\\Register_Form.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-01-15T11:46:56.135Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -47,26 +56,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashBoard.xaml",
-              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml",
-              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\DashBoard.xaml",
-              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml",
-              "RelativeToolTip": "Cozy_Cup_Desktop_App\\DashBoard.xaml",
+              "Title": "Products_Management.xaml",
+              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Products_Management.xaml",
+              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\Products_Management.xaml",
+              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Products_Management.xaml",
+              "RelativeToolTip": "Cozy_Cup_Desktop_App\\Products_Management.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-18T08:24:17.795Z",
+              "WhenOpened": "2025-01-18T11:39:56.303Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashBoard.xaml.cs",
-              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml.cs",
-              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\DashBoard.xaml.cs",
-              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml.cs",
-              "RelativeToolTip": "Cozy_Cup_Desktop_App\\DashBoard.xaml.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:22:54.867Z"
             },
             {
               "$type": "Document",
@@ -77,7 +74,44 @@
               "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Customer_Management.xaml",
               "RelativeToolTip": "Cozy_Cup_Desktop_App\\Customer_Management.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-17T12:39:50.48Z"
+              "WhenOpened": "2025-01-18T11:37:06.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee_Management.xaml",
+              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Employee_Management.xaml",
+              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\Employee_Management.xaml",
+              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\Employee_Management.xaml",
+              "RelativeToolTip": "Cozy_Cup_Desktop_App\\Employee_Management.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-18T11:37:54.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\MainWindow.xaml",
+              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\MainWindow.xaml",
+              "RelativeToolTip": "Cozy_Cup_Desktop_App\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-18T11:38:32.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashBoard.xaml",
+              "DocumentMoniker": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml",
+              "RelativeDocumentMoniker": "Cozy_Cup_Desktop_App\\DashBoard.xaml",
+              "ToolTip": "D:\\gui pro\\The_Cozy_Cup_-Cafe_Management_Website\\Cozy_Cup_Desktop_App\\Cozy_Cup_Desktop_App\\DashBoard.xaml",
+              "RelativeToolTip": "Cozy_Cup_Desktop_App\\DashBoard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-18T11:37:25.511Z",
+              "EditorCaption": ""
             }
           ]
         }

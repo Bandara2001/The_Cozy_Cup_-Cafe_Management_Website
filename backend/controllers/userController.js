@@ -45,7 +45,10 @@ const createToken = (id) => {
 
 // User registration
 const registerUser = async (req, res) => {
-  const { user_name, password, email, contact_no, joined_date } = req.body;
+  const { user_name, user_password, email, contact_no, joined_date } = req.body;
+
+  console.log('Request body:', req.body);
+  
   try {
     const exists = await User.findOne({ where: { email: email.toLowerCase() } });
 
@@ -57,12 +60,12 @@ const registerUser = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Enter a valid email' });
     }
 
-    if (password.length < 8) {
+    if (user_password.length < 8) {
       return res.status(400).json({ success: false, message: 'Password must be at least 8 characters' });
     }
 
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(user_password, salt);
 
     const newUser = await User.create({
       user_name,

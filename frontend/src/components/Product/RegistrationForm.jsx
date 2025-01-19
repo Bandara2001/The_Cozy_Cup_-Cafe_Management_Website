@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import './RegistrationForm.css';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
+  const url = 'http://localhost:4951'; // Backend URL
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    password: '',
+    email: '',
+    telephone: '',
+    joinedDate: '',
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,25 +22,42 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password === formData.confirmPassword) {
-      setIsSubmitted(true);
-      console.log("Form Submitted", formData);
-    } else {
-      alert("Passwords do not match!");
+
+    try {
+      const response = await axios.post(`${url}/api/user/register`, {
+        user_name: formData.name,
+        password: formData.password,
+        email: formData.email,
+        contact_no: formData.telephone,
+        joined_date: formData.joinedDate,
+      });
+
+      if (response.data.success) {
+        localStorage.setItem('token', response.data.token);
+        setIsAuthenticated(true);
+        setShowLogin(false);
+        alert('Registration successful!');
+      } else {
+        setErrorMessage(response.data.message);
+      }
+    } catch (error) {
+      console.error('Registration failed:', error);
+      setErrorMessage('An error occurred. Please try again.');
     }
   };
 
   return (
-    <div className="register-page"> {/* Apply the class here */}
+    <div className="register-page">
       <section className="register-section">
-        <div className="transparent-box"></div> {/* Transparent overlay */}
+        <div className="transparent-box"></div>
         <div className="register-container">
           <h2>REGISTER</h2>
           <form onSubmit={handleSubmit}>
+            {/* Full Name field */}
             <div className="form-group">
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
@@ -48,18 +68,7 @@ const RegistrationForm = () => {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
+            {/* Password field */}
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -72,27 +81,51 @@ const RegistrationForm = () => {
               />
             </div>
 
+            {/* Email field */}
             <div className="form-group">
-              <label htmlFor="confirm-password">Confirm Password</label>
+              <label htmlFor="email">Email</label>
               <input
-                type="password"
-                id="confirm-password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
                 onChange={handleInputChange}
                 required
               />
             </div>
 
+            {/* Telephone field */}
+            <div className="form-group">
+              <label htmlFor="telephone">Contact Number</label>
+              <input
+                type="tel"
+                id="telephone"
+                name="telephone"
+                value={formData.telephone}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            {/* Joined Date field */}
+            <div className="form-group">
+              <label htmlFor="joinedDate">Joined Date</label>
+              <input
+                type="date"
+                id="joinedDate"
+                name="joinedDate"
+                value={formData.joinedDate}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            {/* Error message */}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+
             <button type="submit" className="register-button">
               Register
             </button>
-
-            {isSubmitted && <p className="success-message">Registration successful!</p>}
-
-            <p>
-              Already have an account? <a href="http://localhost:3000">Login here</a>
-            </p>
           </form>
         </div>
       </section>

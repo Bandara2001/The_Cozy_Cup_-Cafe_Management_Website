@@ -6,16 +6,15 @@
   position: relative; /* Ensure the overlay is positioned correctly */
 }
 
-
 .register-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
 
-  .transparent-box {
+.transparent-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,61 +34,150 @@
   position: relative; /* Ensures the content stays above the overlay */
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: lighter;
+  color: #000000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-appearance: none; /* Remove default styling for better cross-browser consistency */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #865716;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-user-select: none; /* Prevent text selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.register-button:hover {
+  background-color: #caab5f;
+}
+
+.success-message {
+  color: rgb(146, 109, 39);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #a78d41;
+  text-decoration: none;
+}
+
+.toggle-button {
+  background: none;
+  color: #713517;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+  -webkit-user-select: none; /* Prevent text selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.toggle-button:hover {
+  color: #4a3b2a;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .register-container {
+    width: 90%; /* Make the form container responsive */
+    padding: 15px;
+  }
+
   h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 30px;
-    margin-bottom: 30px;
-    font-weight: lighter;
-    color: #000000;
-     
+    font-size: 24px; /* Slightly smaller title for mobile screens */
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
+
   input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
   }
-  
+
   .register-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #865716;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  .register-button:hover {
-    background-color: #caab5f;
-  }
-  
-  .success-message {
-    color: rgb(146, 109, 39);
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  p {
-    text-align: center;
-  }
-  
-  a {
-    color: #a78d41;
-    text-decoration: none;
-  }
+}
+
+/* Specific Input Styling */
+input[type="tel"],
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: 2px solid #865716;
+  border-color: #865716;
+}
+
+input:invalid {
+  border-color: #713517;
+}
+
+input[type="password"]::placeholder {
+  color: #888;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+  color: #666;
+}
+
+/* For the "Toggle" button between login and register */
+.toggle-button {
+  font-size: 0.9rem;
+  color: #713517;
+}
+
+.toggle-button:hover {
+  color: #4a3b2a;
+}

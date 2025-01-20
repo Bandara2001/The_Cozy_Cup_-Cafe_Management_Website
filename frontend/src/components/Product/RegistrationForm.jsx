@@ -14,6 +14,7 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
 
   const [isLogin, setIsLogin] = useState(false); // Toggle between login and registration
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token')); // Check login status
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +39,7 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
           localStorage.setItem('token', response.data.token);
           setIsAuthenticated(true);
           setShowLogin(false);
+          setIsLoggedIn(true);
           alert('Login successful!');
         } else {
           setErrorMessage(response.data.message);
@@ -61,6 +63,7 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
           localStorage.setItem('token', response.data.token);
           setIsAuthenticated(true);
           setShowLogin(false);
+          setIsLoggedIn(true);
           alert('Registration successful!');
         } else {
           setErrorMessage(response.data.message);
@@ -85,6 +88,14 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
     setErrorMessage('');
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    setShowLogin(false);
+    setIsLoggedIn(false);
+    alert('You have successfully logged out!');
+  };
+
   useEffect(() => {
     console.log(formData);
   }, [formData]);
@@ -94,112 +105,124 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
       <section className="register-section">
         <div className="transparent-box"></div>
         <div className="register-container">
-          <h2>{isLogin ? 'LOGIN' : 'REGISTER'}</h2>
-          <form onSubmit={handleSubmit}>
-            {/* Name field (only for registration) */}
-            {!isLogin && (
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-            )}
+          {isLoggedIn ? (
+            <>
+              <h2>Welcome Back!</h2>
+              <p>You are logged in.</p>
+              <button onClick={handleLogout} className="logout-button">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <h2>{isLogin ? 'LOGIN' : 'REGISTER'}</h2>
+              <form onSubmit={handleSubmit}>
+                {/* Name field (only for registration) */}
+                {!isLogin && (
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                )}
 
-            {/* Email field */}
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
+                {/* Email field */}
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
 
-            {/* Password field */}
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
+                {/* Password field */}
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
 
-            {/* Contact Number field (only for registration) */}
-            {!isLogin && (
-              <div className="form-group">
-                <label htmlFor="telephone">Contact Number</label>
-                <input
-                  type="tel"
-                  id="telephone"
-                  name="telephone"
-                  value={formData.telephone}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-            )}
+                {/* Contact Number field (only for registration) */}
+                {!isLogin && (
+                  <div className="form-group">
+                    <label htmlFor="telephone">Contact Number</label>
+                    <input
+                      type="tel"
+                      id="telephone"
+                      name="telephone"
+                      value={formData.telephone}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                )}
 
-            {/* Joined Date field (only for registration) */}
-            {!isLogin && (
-              <div className="form-group">
-                <label htmlFor="joinedDate">Joined Date</label>
-                <input
-                  type="date"
-                  id="joinedDate"
-                  name="joinedDate"
-                  value={formData.joinedDate}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-            )}
+                {/* Joined Date field (only for registration) */}
+                {!isLogin && (
+                  <div className="form-group">
+                    <label htmlFor="joinedDate">Joined Date</label>
+                    <input
+                      type="date"
+                      id="joinedDate"
+                      name="joinedDate"
+                      value={formData.joinedDate}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                )}
 
-            {/* Error message */}
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+                {/* Error message */}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-            <button type="submit" className="register-button">
-              {isLogin ? 'Login' : 'Register'}
-            </button>
+                <button type="submit" className="register-button">
+                  {isLogin ? 'Login' : 'Register'}
+                </button>
 
-            <p>
-              {isLogin ? (
-                <>
-                  Don't have an account?{' '}
-                  <button
-                    type="button"
-                    className="toggle-button"
-                    onClick={() => handleModeSwitch(false)}
-                  >
-                    Register here
-                  </button>
-                </>
-              ) : (
-                <>
-                  Already have an account?{' '}
-                  <button
-                    type="button"
-                    className="toggle-button"
-                    onClick={() => handleModeSwitch(true)}
-                  >
-                    Login here
-                  </button>
-                </>
-              )}
-            </p>
-          </form>
+                <p>
+                  {isLogin ? (
+                    <>
+                      Don't have an account?{' '}
+                      <button
+                        type="button"
+                        className="toggle-button"
+                        onClick={() => handleModeSwitch(false)}
+                      >
+                        Register here
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      Already have an account?{' '}
+                      <button
+                        type="button"
+                        className="toggle-button"
+                        onClick={() => handleModeSwitch(true)}
+                      >
+                        Login here
+                      </button>
+                    </>
+                  )}
+                </p>
+              </form>
+            </>
+          )}
         </div>
       </section>
     </div>

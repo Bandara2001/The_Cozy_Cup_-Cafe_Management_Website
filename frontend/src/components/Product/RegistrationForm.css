@@ -115,6 +115,33 @@ a {
   color: #4a3b2a;
 }
 
+/* Logout Button Styling */
+.logout-button {
+  display: inline-block;
+  background-color: #965719; /* Bootstrap-like red button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%; /* Ensures consistency with other buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #c39146; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.logout-button:active {
+  background-color: #6a320d; /* Even darker red when pressed */
+  transform: scale(1); /* Remove zoom effect on click */
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .register-container {
@@ -131,7 +158,8 @@ a {
     font-size: 14px;
   }
 
-  .register-button {
+  .register-button,
+  .logout-button {
     font-size: 14px;
     padding: 8px;
   }

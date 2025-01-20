@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCart } from '../../contexts/CartContext';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
   const { cartItems, removeFromCart } = useCart();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Define images for each product, matching them with the names in the cart
   const productImages = {
@@ -18,17 +19,36 @@ const ShoppingCart = () => {
     'Cappuccino': 'https://m.media-amazon.com/images/I/61L3CzrO76L.jpg',
     'Hot choclate': 'https://www.rachelcooks.com/wp-content/uploads/2024/10/oat-milk-hot-chocolate-1500-11-square.jpg',
     'Coffee': 'https://m.media-amazon.com/images/I/71BSVR7LQZL.jpg',
-    'Smothies': 'https://www.throughthefibrofog.com/wp-content/uploads/2022/02/apple-and-pear-smoothie-3.jpg'
+    'Smothies': 'https://www.throughthefibrofog.com/wp-content/uploads/2022/02/apple-and-pear-smoothie-3.jpg',
   };
 
   // Calculate total items and total price
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+  useEffect(() => {
+    // Check if the user is logged in by verifying token existence
+    const token = localStorage.getItem('token'); // Assumes token is stored in localStorage
+    setIsAuthenticated(!!token);
+  }, []);
+
   const handleCheckout = () => {
+    if (!isAuthenticated) {
+      alert('You are not logged in. Please log in to proceed to checkout.');
+      return;
+    }
     // Redirect or perform checkout logic here
     window.location.href = '#'; // Adjust the URL based on your app's routing
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="cart-container">
+        <h1 className="cart-header">Your Shopping Cart</h1>
+        <p className="auth-message">You are not logged in. Please log in to view and manage your cart.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="cart-container">

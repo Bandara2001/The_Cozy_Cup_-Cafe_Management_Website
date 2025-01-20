@@ -94,7 +94,7 @@ select * from sales;
 CREATE TABLE User(
 	User_ID INT primary key AUTO_INCREMENT,
     User_Name VARCHAR(30) UNIQUE,
-    User_Password VARCHAR(18) NOT NULL,
+    User_Password VARCHAR(200) NOT NULL,
     Email VARCHAR(50),
     Contact_no CHAR(10),
     Joined_date DATETIME DEFAULT CURRENT_TIMESTAMP

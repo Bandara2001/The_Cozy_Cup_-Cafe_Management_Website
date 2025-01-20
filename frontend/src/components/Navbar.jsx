@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Layout, Menu, Badge, Input } from 'antd';
+import React, { useState } from 'react'; // Removed useEffect
+import { Layout, Menu, Input } from 'antd'; // Removed Badge
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import ProfileIcon from './ProfileIcon';

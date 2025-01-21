@@ -60,11 +60,8 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
         });
 
         if (response.data.success) {
-          localStorage.setItem('token', response.data.token);
-          setIsAuthenticated(true);
-          setShowLogin(false);
-          setIsLoggedIn(true);
-          alert('Registration successful!');
+          alert('Registration successful! Please log in.');
+          handleModeSwitch(true); // Switch to login mode
         } else {
           setErrorMessage(response.data.message);
         }
@@ -93,6 +90,13 @@ const RegistrationForm = ({ setIsAuthenticated, setShowLogin }) => {
     setIsAuthenticated(false);
     setShowLogin(false);
     setIsLoggedIn(false);
+    setFormData({
+      name: '',
+      password: '',
+      email: '',
+      telephone: '',
+      joinedDate: '',
+    }); // Clear form data on logout
     alert('You have successfully logged out!');
   };
 

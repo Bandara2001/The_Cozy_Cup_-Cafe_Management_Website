@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="9.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Free Cozy Coffee Shop Image _ Download at StockCake.jpg" />
     <Resource Include="Registration_bg.jpg" />
     <Resource Include="The Ultimate Guide to Designing the Perfect Cozy Café.jpg" />

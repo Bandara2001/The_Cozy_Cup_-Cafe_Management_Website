@@ -7,7 +7,7 @@
     </Window.Background>
 
     <Grid>
-        <!-- Define rows and columns -->
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="7*" />
@@ -17,40 +17,43 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <!-- Sidebar Section -->
+        
         <StackPanel Grid.Column="0" Background="#FF902D0C" Grid.RowSpan="2">
             <Image x:Name="Logo" Width="137" Height="139" HorizontalAlignment="Center" Margin="0,20,0,10"
                    Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" />
             <TextBlock Text="Cozy_Cup" FontFamily="Constantia" FontSize="35" Foreground="White" HorizontalAlignment="Center" Margin="0,55,0,0" />
             <TextBlock Text="Comfort In Every Cup" FontFamily="Lucida Handwriting" FontSize="18" Foreground="White" HorizontalAlignment="Center" Margin="0,120,0,0" />
-            <Button Content="REGISTER" Margin="30,300,30,10" FontSize="20" Background="#FFF4D6D6" Foreground="#FF902D0C" />
+            <Button Content="REGISTER" Margin="30,300,30,10" FontSize="20" 
+        Background="#FFF4D6D6" Foreground="#FF902D0C" 
+        Click="REGISTER"/>
+
         </StackPanel>
 
-        <!-- Sign-In Section -->
+        
         <Grid Grid.Column="1" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- Sign-In Title -->
+            
             <TextBlock Text="SIGN IN" FontFamily="Arial Rounded MT Bold" FontSize="30" Foreground="#FFEEC8BC"
                        HorizontalAlignment="Center" Margin="0,20,0,10" />
 
-            <!-- Input Section -->
+           
             <StackPanel Grid.Row="1" Margin="50,0,50,0" VerticalAlignment="Center">
                 <Label Content="Username:" FontSize="20" Foreground="#FFEEC8BC" Margin="0,50,0,0" />
                 <TextBox x:Name="UsernameTextBox" Height="30" Background="#FFEEE3E3" Margin="0,50,0,0" />
 
                 <Label Content="Password:" FontSize="20" Foreground="#FFEEC8BC" Margin="0,50,0,0" />
 
-                <!-- PasswordBox and PasswordTextBox -->
+                
                 <PasswordBox x:Name="PasswordBox" Height="30" Background="#FFEEE3E3" Margin="0,50,0,0" />
                 <TextBox x:Name="PasswordTextBox" Height="30" Background="#FFEEE3E3" Visibility="Collapsed" />
 
                 <CheckBox Content="Show Password" Foreground="#FFEEC8BC" FontSize="15" Margin="0,50,0,20" Checked="ShowPassword_Checked" Unchecked="ShowPassword_Unchecked" />
 
-                <!-- Buttons -->
+                
                 <Button Content="Login" FontSize="20" Background="#FF902D0C" Foreground="White" Height="40" Margin="0,200,0,0" Click="LOGIN" />
             </StackPanel>
         </Grid>

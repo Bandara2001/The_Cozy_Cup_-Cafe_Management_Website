@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cozy_Cup_Desktop_App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f2cc8e34956869f1b0b06b79019aa22fa84552d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6791285a0ef400e502ff8cad2a3a92fb8f956df5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cozy_Cup_Desktop_App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cozy_Cup_Desktop_App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

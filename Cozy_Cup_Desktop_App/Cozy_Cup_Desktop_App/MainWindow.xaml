@@ -7,7 +7,7 @@
     </Window.Background>
 
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="7*" />
@@ -17,8 +17,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        
-        <StackPanel Grid.Column="0" Background="#FF902D0C" Grid.RowSpan="2">
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" Background="#FF902D0C">
             <Image x:Name="Logo" Width="137" Height="139" HorizontalAlignment="Center" Margin="0,20,0,10"
                    Source="/vecteezy_aromatic-art-coffee-cup-sketches-and-illustrations-ai_26691146.png" />
             <TextBlock Text="Cozy_Cup" FontFamily="Constantia" FontSize="35" Foreground="White" HorizontalAlignment="Center" Margin="0,55,0,0" />
@@ -29,31 +29,31 @@
 
         </StackPanel>
 
-        
+
         <Grid Grid.Column="1" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            
+
             <TextBlock Text="SIGN IN" FontFamily="Arial Rounded MT Bold" FontSize="30" Foreground="#FFEEC8BC"
                        HorizontalAlignment="Center" Margin="0,20,0,10" />
 
-           
+
             <StackPanel Grid.Row="1" Margin="50,0,50,0" VerticalAlignment="Center">
                 <Label Content="Username:" FontSize="20" Foreground="#FFEEC8BC" Margin="0,50,0,0" />
                 <TextBox x:Name="UsernameTextBox" Height="30" Background="#FFEEE3E3" Margin="0,50,0,0" />
 
                 <Label Content="Password:" FontSize="20" Foreground="#FFEEC8BC" Margin="0,50,0,0" />
 
-                
+
                 <PasswordBox x:Name="PasswordBox" Height="30" Background="#FFEEE3E3" Margin="0,50,0,0" />
                 <TextBox x:Name="PasswordTextBox" Height="30" Background="#FFEEE3E3" Visibility="Collapsed" />
 
                 <CheckBox Content="Show Password" Foreground="#FFEEC8BC" FontSize="15" Margin="0,50,0,20" Checked="ShowPassword_Checked" Unchecked="ShowPassword_Unchecked" />
 
-                
+
                 <Button Content="Login" FontSize="20" Background="#FF902D0C" Foreground="White" Height="40" Margin="0,200,0,0" Click="LOGIN" />
             </StackPanel>
         </Grid>
